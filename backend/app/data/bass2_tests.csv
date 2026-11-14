@@ -1,0 +1,57 @@
+id,test_id,investigation,material,thickness_mm,width_mm,flow_direction,flow_initial_cm_s,flow_final_cm_s,flow_as_recorded,oxygen_vol_pct,pressure_kpa,outcome,outcome_label,nasa_notes,source_id,pdf_page
+sibal-GMT45-T1,GMT45-T1,BASS-II,SIBAL fabric,0.32,22,concurrent,10,10,10,18.5,101.325,burned_outcome_not_stated,Burned; final outcome not stated in table,,bass2-summary,104
+sibal-GMT45-T2,GMT45-T2,BASS-II,SIBAL fabric,0.32,22,concurrent,10,5,10 to 5,18.5,101.325,burned_outcome_not_stated,Burned; final outcome not stated in table,,bass2-summary,104
+sibal-GMT45-T4,GMT45-T4,BASS-II,SIBAL fabric,0.32,22,concurrent,10,2.2,10 to 2.2,18.7,101.325,quenched_low_flow,Quenched as flow was reduced,Quenched,bass2-summary,104
+sibal-GMT45-T15,GMT45-T15,BASS-II,SIBAL fabric,0.32,22,concurrent,10,29,10 to 29,18.7,101.325,sustained_no_blowoff,Kept burning at high flow (no blowoff),No blowoff,bass2-summary,104
+sibal-GMT100-T5,GMT100-T5,BASS-II,SIBAL fabric,0.32,22,concurrent,10,2.4,10 to 2.4,18.8,101.325,burned_outcome_not_stated,Burned; final outcome not stated in table,,bass2-summary,104
+sibal-GMT100-T6,GMT100-T6,BASS-II,SIBAL fabric,0.32,22,concurrent,4.5,2.6,4.5 to 2.6,18.8,101.325,burned_outcome_not_stated,Burned; final outcome not stated in table,,bass2-summary,104
+sibal-GMT100-T13,GMT100-T13,BASS-II,SIBAL fabric,0.32,22,concurrent,4,2.2,4 to 2.2,17.5,101.325,quenched_low_flow,Quenched as flow was reduced,Quenched,bass2-summary,104
+sibal-GMT100-T16,GMT100-T16,BASS-II,SIBAL fabric,0.32,22,concurrent,4,3,4 to 3,17.6,101.325,burned_outcome_not_stated,Burned; final outcome not stated in table,,bass2-summary,104
+sibal-GMT175-T9,GMT175-T9,BASS-II,SIBAL fabric,0.32,22,concurrent,10,10,10,16.4,101.325,not_ignited,Did not ignite,No ignition,bass2-summary,104
+sibal-GMT175-T10,GMT175-T10,BASS-II,SIBAL fabric,0.32,22,concurrent,5,5,5,16.4,101.325,not_ignited,Did not ignite,No ignition,bass2-summary,104
+sibal-GMT175-T18,GMT175-T18,BASS-II,SIBAL fabric,0.32,22,concurrent,5,2.6,5 to 2.6,17.4,101.325,quenched_low_flow,Quenched as flow was reduced,Quenched,bass2-summary,104
+sibal-GMT178-T11,GMT178-T11,BASS-II,SIBAL fabric,0.32,22,concurrent,4,4,4,17.1,101.325,burned_outcome_not_stated,Burned; final outcome not stated in table,,bass2-summary,104
+sibal-GMT178-T12,GMT178-T12,BASS-II,SIBAL fabric,0.32,22,concurrent,5,5,5,16.8,101.325,not_ignited,Did not ignite,No ignition,bass2-summary,104
+sibal-GMT178-T14,GMT178-T14,BASS-II,SIBAL fabric,0.32,22,concurrent,4,2.8,4 to 2.8,16.9,101.325,quenched_low_flow,Quenched as flow was reduced,Quenched,bass2-summary,104
+sibal-GMT178-T17,GMT178-T17,BASS-II,SIBAL fabric,0.32,22,concurrent,6,53,6 to 53,16.9,101.325,sustained_no_blowoff,Kept burning at high flow (no blowoff),No blowoff,bass2-summary,104
+sibal-GMT190-T19,GMT190-T19,BASS-II,SIBAL fabric,0.32,12,concurrent,11,11,11,17.2,101.325,burned_outcome_not_stated,Burned; final outcome not stated in table,,bass2-summary,104
+sibal-GMT190-T20,GMT190-T20,BASS-II,SIBAL fabric,0.32,12,concurrent,11,3,11 to 3,17.2,101.325,quenched_low_flow,Quenched as flow was reduced,Quenched,bass2-summary,104
+sibal-GMT190-T21,GMT190-T21,BASS-II,SIBAL fabric,0.32,12,concurrent,11,47,11 to 47,17.2,101.325,blowoff,Blew off at high flow,Blow-off,bass2-summary,104
+sibal-GMT190-T22,GMT190-T22,BASS-II,SIBAL fabric,0.32,12,concurrent,10.5,5,10.5 to 5,17.1,101.325,quenched_low_flow,Quenched as flow was reduced,Quenched,bass2-summary,104
+sibal-GMT190-T23,GMT190-T23,BASS-II,SIBAL fabric,0.32,22,concurrent,10,10,10,17.2,101.325,not_ignited,Did not ignite,"Reused, did not ignite",bass2-summary,104
+sibal-GMT190-T24,GMT190-T24,BASS-II,SIBAL fabric,0.32,22,concurrent,10,10,10,18.2,101.325,burned_outcome_not_stated,Burned; final outcome not stated in table,"Reused, one-sided flame",bass2-summary,104
+sibal-GMT216-T25,GMT216-T25,BASS-II,SIBAL fabric,0.32,22,concurrent,5,2.5,5 to 2.5,20.8,101.325,burned_outcome_not_stated,Burned; final outcome not stated in table,"Reused, ignited",bass2-summary,104
+sibal-GMT216-T26,GMT216-T26,BASS-II,SIBAL fabric,0.32,22,concurrent,5,2.5,5 to 2.5,20.8,101.325,burned_outcome_not_stated,Burned; final outcome not stated in table,"Reused, ignited",bass2-summary,104
+sibal-GMT216-T27,GMT216-T27,BASS-II,SIBAL fabric,0.32,12,concurrent,5,2,5 to 2,20.7,101.325,burned_outcome_not_stated,Burned; final outcome not stated in table,"Reused, ignited",bass2-summary,104
+sibal-GMT216-T28a,GMT216-T28a,BASS-II,SIBAL fabric,0.32,12,concurrent,5,5,5,20.7,101.325,not_ignited,Did not ignite,"Reused, did not ignite",bass2-summary,104
+sibal-GMT216-T28b,GMT216-T28b,BASS-II,SIBAL fabric,0.32,12,concurrent,5,5,5,20.7,101.325,not_ignited,Did not ignite,"Reused, did not ignite",bass2-summary,104
+sibal-GMT216-T29,GMT216-T29,BASS-II,SIBAL fabric,0.32,12,concurrent,5,2,5 to 2,20.7,101.325,burned_outcome_not_stated,Burned; final outcome not stated in table,"Reused, ignited",bass2-summary,104
+sibal-GMT96-T8,GMT96-T8,BASS,SIBAL fabric,0.32,22,concurrent,5,5,5,21,101.325,burned_outcome_not_stated,Burned; final outcome not stated in table,BASS,bass2-summary,104
+sibal-GMT96-T7,GMT96-T7,BASS,SIBAL fabric,0.32,22,concurrent,10,10,10,21,101.325,burned_outcome_not_stated,Burned; final outcome not stated in table,BASS,bass2-summary,104
+sibal-GMT131-T10,GMT131-T10,BASS,SIBAL fabric,0.32,12,concurrent,11,11,11,21,101.325,burned_outcome_not_stated,Burned; final outcome not stated in table,BASS,bass2-summary,104
+sibal-GMT222-T11,GMT222-T11,BASS,SIBAL fabric,0.32,12,concurrent,19,19,19,21,101.325,burned_outcome_not_stated,Burned; final outcome not stated in table,BASS,bass2-summary,104
+bass2-B1,B1,BASS-II,PMMA,0.1,20,opposed,5,,5,20.6,99.2-99.5,extinguished_flow_off,Extinguished after flow was turned off,"Ignited very quickly, turned flow off after spread halfway; flame extinguished very quickly; and sooty with blue leading edge",bass2-summary,111
+bass2-B2,B2,BASS-II,PMMA,0.2,20,opposed,5,,5,20.6,99.2-99.5,burned_outcome_not_stated,Burned; final outcome not stated in table,"No stills taken, cable came loose; not quite a straight on edge view",bass2-summary,112
+bass2-B3,B3,BASS-II,PMMA,0.1,20,opposed,2,,2,20.9,99.2-99.5,burned_outcome_not_stated,Burned; final outcome not stated in table,Probably 20.6 O2 to start; lower flow flames much more blue overall; still some soot though,bass2-summary,112
+bass2-B4,B4,BASS-II,PMMA,0.3,20,opposed,5,,5,20.6,99.2-99.5,burned_outcome_not_stated,Burned; final outcome not stated in table,Bubble layer thickness increases with sample thickness,bass2-summary,112
+bass2-B5,B5,BASS-II,PMMA,0.2,20,opposed,5,,5,20.9,99.2-99.5,burned_outcome_not_stated,Burned; final outcome not stated in table,"Repeat of B2 test conditions, to get top view images; question the 20.9 reading; all others were 20.6 this day",bass2-summary,112
+bass2-B6,B6,BASS-II,PMMA,0.1,20,opposed,3,,"3, 5, approaching 10",20.1,99.2-99.5,burned_entire_sample,Burned the entire sample,"Steady burning at 3 and 5 cm/s, did not reach 10 cm/s before end of sample, complete burnout, HCl –>0.3",bass2-summary,112
+bass2-B7,B7,BASS-II,PMMA,0.4,20,opposed,2,,2,20.6,99.2-99.5,burned_outcome_not_stated,Burned; final outcome not stated in table,Very long bubble layer,bass2-summary,112
+bass2-B8,B8,BASS-II,PMMA,0.2,20,opposed,10,,"10, maximum",20.1,99.2-99.5,sustained_no_blowoff,Kept burning at high flow (no blowoff),"Spread at 10 cm/s, did not blowoff",bass2-summary,112
+bass2-B9,B9,BASS-II,PMMA,0.1,20,opposed,2,,"2, <1",20.1,99.2-99.5,quenched_low_flow,Quenched as flow was reduced,"Steady burning at 2 cm/s, extinguished at 0.35",bass2-summary,112
+bass2-B10,B10,BASS-II,PMMA,0.2,10,opposed,5,,"5, 4, 3, 2, 1",20.1,99.2-99.5,quenched_low_flow,Quenched as flow was reduced,"Multiple velocities for steady spread, extinguished at pot 0.35",bass2-summary,111
+bass2-B11,B11,BASS-II,PMMA,0.2,20,opposed,5,,"5, 3, 1, <1",20.1,99.2-99.5,quenched_low_flow,Quenched as flow was reduced,"Multiple velocities for steady spread, extinguished at pot 0.35",bass2-summary,111
+bass2-B12,B12,BASS-II,PMMA,0.3,20,opposed,2,,2,20.5,99.2-99.5,burned_outcome_not_stated,Burned; final outcome not stated in table,"Mostly blue, soot only on bottom",bass2-summary,111
+bass2-B13,B13,BASS-II,PMMA,0.4,20,opposed,10,,"10, 5, 4, 3, 2, 1",20.1,99.2-99.5,quenched_low_flow,Quenched as flow was reduced,"Multiple velocities for steady spread, extinguished at pot 0.35",bass2-summary,111
+bass2-B14,B14,BASS-II,PMMA,0.2,10,opposed,5,,"5, 3, 2, extinction",14.1,99.2-99.5,no_sustained_flame,"Ignited briefly, no sustained flame","HCl O, only brief ignition, flame extinguished",bass2-summary,111
+bass2-B15,B15,BASS-II,PMMA,0.1,20,opposed,10,,"10, max",20.1,99.2-99.5,sustained_no_blowoff,Kept burning at high flow (no blowoff),"Spread at 10 cm/s, did not blowoff",bass2-summary,111
+bass2-B16,B16,BASS-II,PMMA,0.1,20,opposed,3,,"3, 5 pot, 0.4 pot",16.5,99.2-99.5,quenched_low_flow,Quenched as flow was reduced,"HCl 1.1 > 1.3; flame quenched after prolonged burn at 0.4 pot, one-sided flame; spread to top side and quenched immediately; did igniter wire affect top flame?",bass2-summary,111
+bass2-B17,B17,BASS-II,PMMA,0.2,10,opposed,5,,"5, 3, pot 0.4",16.6,99.2-99.5,quenched_low_flow,Quenched as flow was reduced,"Burned steadily at higher flows, extinguished just as we reached a pot of 0.4; vapor jetting more on bottom, possibly because of sample tilted slightly to flow?",bass2-summary,111
+bass2-B18,B18,BASS-II,PMMA,0.2,10,opposed,10,,"10, blowoff",16.5,99.2-99.5,blowoff,Blew off at high flow,"HCl 0.6 > 0.9, flame blew out at a fan pot of 7.0",bass2-summary,112
+bass2-B19,B19,BASS-II,PMMA,0.1,20,opposed,10,,"10, blowoff",16.4,99.2-99.5,blowoff,Blew off at high flow,HCl 1.3 > 1.4; flame blew out at a pot of 6.0,bass2-summary,112
+bass2-B20,B20,BASS-II,PMMA,0.1,20,opposed,5,,"5, 3, pot 0.5",16.5,99.2-99.5,burned_entire_sample,Burned the entire sample,HCl 0.9 > 1.1; flame burned entire sample,bass2-summary,112
+bass2-B21,B21,BASS-II,PMMA,0.2,10,opposed,5,,5 down to extinction,19.8,99.2-99.5,quenched_low_flow,Quenched as flow was reduced,Ignition at 5 cm/s then fan pot turned down slowly after flame; spreads halfway; flame goes out at 0.355 pot setting,bass2-summary,112
+bass2-B22,B22,BASS-II,PMMA,0.2,10,opposed,5,,"5, 2, 0",19.8,99.2-99.5,quenched_low_flow,Quenched as flow was reduced,"Ignition at 5 cm/s then decreased flow in step, fan pot 1.7, 0.5, 0.4, 0.36 (flame out)",bass2-summary,112
+bass2-F1,F1,BASS-II,Nomex,,,concurrent,9.5,,9.5,20.6,,no_sustained_flame,"Ignited briefly, no sustained flame",Ignited briefly but did not spread at all and extinguished while the igniter was still on,bass2-summary,113
+bass2-F2,F2,BASS-II,Nomex,,,concurrent,15,,15,21,,no_sustained_flame,"Ignited briefly, no sustained flame","Tried to ignite, flame would not sustain",bass2-summary,113
+bass2-F3,F3,BASS-II,Nomex,,,concurrent,8,,8,20.8,,no_sustained_flame,"Ignited briefly, no sustained flame","Brief ignition flash, no sustained flame; no postburn sensor readings taken",bass2-summary,113

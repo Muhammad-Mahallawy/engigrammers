@@ -1,0 +1,1184 @@
+.sim-page-heading {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 25px;
+  margin: 25px 0 27px;
+}
+.sim-page-heading h1 {
+  font:
+    500 clamp(29px, 3.6vw, 47px) / 1.17 "Space Grotesk",
+    sans-serif;
+  letter-spacing: -2px;
+  margin: 12px 0;
+}
+.sim-page-heading p {
+  color: #91adbd;
+  font-size: 12px;
+}
+.sim-model-pill {
+  display: flex;
+  gap: 7px;
+  align-items: center;
+  font-size: 9px;
+  color: #a9d7ec;
+  border: 1px solid #365770;
+  border-radius: 20px;
+  padding: 8px 11px;
+  white-space: nowrap;
+  margin-bottom: 6px;
+}
+.sim-boundary {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 17px;
+  border: 1px solid #294553;
+  border-radius: 10px;
+  background: #0a1d2aaa;
+  margin-bottom: 22px;
+  color: #9dbccc;
+}
+.sim-boundary > svg {
+  color: #8bcee9;
+  flex-shrink: 0;
+}
+.sim-boundary p {
+  font-size: 10px;
+  line-height: 1.8;
+  flex: 1;
+}
+.sim-boundary button {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
+  color: #b2def7;
+  font-size: 9px;
+}
+.sim-workspace {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 300px;
+  gap: 22px;
+  align-items: start;
+}
+.sim-main,
+.sim-side {
+  display: flex;
+  flex-direction: column;
+  gap: 19px;
+  min-width: 0;
+}
+.sim-chamber {
+  overflow: hidden;
+}
+.sim-chamber-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 20px 22px;
+  border-bottom: 1px solid #254253;
+}
+.sim-chamber-heading > div {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.sim-chamber-heading > div > svg {
+  color: #91d8f8;
+}
+.sim-chamber h2 {
+  font:
+    500 14px "Space Grotesk",
+    sans-serif;
+}
+.sim-state {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font:
+    7px "IBM Plex Mono",
+    monospace;
+  letter-spacing: 1px;
+  border: 1px solid #325268;
+  padding: 5px 7px;
+  border-radius: 5px;
+  color: #8db5cf;
+}
+.sim-state i {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: #7898ad;
+}
+.sim-state.running i {
+  background: #8fe4bd;
+}
+.sim-state.running {
+  color: #a1d6c0;
+}
+.sim-chamber-heading .orbital-select-trigger {
+  min-width: 150px;
+  font-size: 10px;
+  min-height: 35px;
+  border-color: #34556c;
+  background: #0b2231;
+}
+.sim-chamber-fields {
+  display: flex;
+  justify-content: center;
+  background: #030c17;
+  padding: 0 23px;
+}
+.sim-field-stage {
+  position: relative;
+  width: 100%;
+  max-width: 470px;
+  min-width: 0;
+  background: #030c17;
+  aspect-ratio: 1;
+}
+.sim-field-stage canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.sim-chamber-fields.comparison {
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.sim-chamber-fields.comparison .sim-field-stage {
+  max-width: none;
+}
+.sim-chamber-fields.comparison .sim-field-stage + .sim-field-stage {
+  border-left: 1px solid #29485d;
+}
+.sim-field-tag {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #9cc7df;
+  background: #06131edd;
+  padding: 6px 9px;
+  border: 1px solid #29495c;
+  border-radius: 4px;
+  font:
+    7px "IBM Plex Mono",
+    monospace;
+  letter-spacing: 0.7px;
+}
+.sim-field-tag i {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: #91d8fa;
+}
+.comparison .sim-field-stage:last-child .sim-field-tag i {
+  background: #d7ac76;
+}
+.sim-field-corner {
+  position: absolute;
+  left: 16px;
+  bottom: 13px;
+  font:
+    6px "IBM Plex Mono",
+    monospace;
+  letter-spacing: 0.8px;
+  color: #719bb5;
+  padding: 4px 6px;
+  background: #030c17bb;
+}
+.sim-canvas-fallback {
+  padding: 30px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  justify-content: center;
+  color: #abc6d8;
+  font-size: 12px;
+  line-height: 1.8;
+}
+.sim-canvas-fallback strong {
+  color: #d3e9f7;
+}
+.sim-scale-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 13px 22px;
+  border-top: 1px solid #243f51;
+  border-bottom: 1px solid #243f51;
+  color: #8aaec6;
+  font-size: 8px;
+}
+.sim-color-scale {
+  width: 93px;
+  height: 5px;
+  border-radius: 5px;
+  background: linear-gradient(
+    90deg,
+    #030c17,
+    #07224a,
+    #2661a9,
+    #7f5fce,
+    #ed8b60,
+    #ffefb7
+  );
+}
+.sim-color-scale.oxygen {
+  background: linear-gradient(
+    90deg,
+    #050e18,
+    #103152,
+    #226a84,
+    #3ca7ae,
+    #71dcc9,
+    #d6fbe0
+  );
+}
+.sim-color-scale.fuel {
+  background: linear-gradient(
+    90deg,
+    #050d1a,
+    #1f224b,
+    #4e397d,
+    #8956b1,
+    #bf87da,
+    #f2dafc
+  );
+}
+.sim-color-note {
+  margin-left: auto;
+  color: #678ca4;
+  font-size: 7px;
+}
+.sim-transport {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 17px 21px 12px;
+}
+.sim-transport > div {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+.sim-run {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  border: 1px solid #addfff;
+  background: #9bdbfb;
+  color: #052235;
+  font-size: 10px;
+  padding: 9px 13px;
+  border-radius: 9px;
+  min-width: 100px;
+}
+.sim-run:hover {
+  background: #c6ebff;
+}
+.sim-run:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+.sim-transport .secondary-button {
+  font-size: 9px;
+  padding: 8px 11px;
+  min-height: 35px;
+}
+.sim-icon-button {
+  padding: 8px;
+  color: #a1c8e0;
+  border-radius: 7px;
+}
+.sim-icon-button:hover {
+  background: #173c52;
+}
+.sim-transport > div > span {
+  font-size: 8px;
+  color: #789daf;
+}
+.sim-transport .orbital-select-trigger {
+  min-height: 30px;
+  min-width: 62px;
+  padding: 6px 9px;
+  font:
+    9px "IBM Plex Mono",
+    monospace;
+  background: #0b2231;
+  border: 1px solid #32546b;
+  border-radius: 7px;
+}
+.sim-progress {
+  height: 2px;
+  background: #153447;
+  margin: 0 21px;
+}
+.sim-progress span {
+  display: block;
+  height: 100%;
+  background: #90d8ff;
+}
+.sim-status-message {
+  padding: 10px 21px 13px;
+  color: #85a9c0;
+  font-size: 9px;
+  line-height: 1.7;
+  min-height: 35px;
+}
+.sim-readouts {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border-top: 1px solid #2b4858;
+  border-bottom: 1px solid #2b4858;
+  padding: 16px 0;
+}
+.sim-readouts > div {
+  padding: 0 19px;
+  border-left: 1px solid #263e4f;
+}
+.sim-readouts > div:first-child {
+  border-left: 0;
+  padding-left: 0;
+}
+.sim-readouts > div > span {
+  display: block;
+  color: #7298b0;
+  font:
+    7px "IBM Plex Mono",
+    monospace;
+  letter-spacing: 0.5px;
+  margin-bottom: 9px;
+}
+.sim-readouts strong {
+  font:
+    400 26px "Space Grotesk",
+    sans-serif;
+  letter-spacing: -1px;
+  color: #d8edf9;
+}
+.sim-readouts strong small {
+  font-size: 11px;
+  letter-spacing: 0;
+  color: #89acc2;
+}
+.sim-readouts > div > small {
+  display: block;
+  font-size: 8px;
+  color: #c0a780;
+  margin-top: 6px;
+}
+.sim-trace {
+  padding: 20px;
+}
+.sim-trace-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+}
+.sim-trace-heading .eyebrow {
+  font-size: 7px;
+  letter-spacing: 1px;
+}
+.sim-trace h2 {
+  font:
+    500 16px "Space Grotesk",
+    sans-serif;
+  margin-top: 7px;
+}
+.sim-trace > p {
+  font-size: 9px;
+  color: #86a6bd;
+  margin-top: 7px;
+}
+.sim-trace-legend {
+  display: flex;
+  gap: 15px;
+  font-size: 8px;
+  color: #9bbace;
+}
+.sim-trace-legend span {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.sim-trace-legend i {
+  width: 12px;
+  height: 2px;
+  background: #91daff;
+}
+.sim-trace-legend .reference i {
+  background: #d7ac76;
+}
+.sim-trace-plot {
+  overflow-x: auto;
+  margin-top: 16px;
+}
+.sim-trace svg {
+  display: block;
+  width: 100%;
+  min-width: 460px;
+}
+.sim-trace > small {
+  color: #688ea4;
+  font-size: 8px;
+  line-height: 1.8;
+  display: block;
+}
+.sim-export {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  padding: 17px 19px;
+}
+.sim-export > div {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+}
+.sim-export > div > svg {
+  color: #86bfdf;
+  flex-shrink: 0;
+}
+.sim-export strong {
+  display: block;
+  font-size: 11px;
+  color: #c5e1f2;
+  font-weight: 500;
+}
+.sim-export small {
+  display: block;
+  color: #799eb6;
+  font-size: 8px;
+  line-height: 1.8;
+  margin-top: 4px;
+}
+.sim-export .secondary-button {
+  white-space: nowrap;
+  min-height: 33px;
+  font-size: 9px;
+  padding: 7px 10px;
+}
+.sim-controls {
+  padding: 22px;
+}
+.sim-controls > .eyebrow,
+.sim-presets > .eyebrow,
+.sim-import > .eyebrow {
+  font-size: 7px;
+  letter-spacing: 1.3px;
+}
+.sim-controls h2 {
+  font:
+    500 23px "Space Grotesk",
+    sans-serif;
+  letter-spacing: -0.7px;
+  color: #dbedfa;
+  margin: 10px 0;
+}
+.sim-controls > p {
+  font-size: 10px;
+  line-height: 1.7;
+  color: #81a4ba;
+}
+.sim-range {
+  display: block;
+  margin-top: 25px;
+}
+.sim-range > span {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 10px;
+  color: #b5d5e9;
+}
+.sim-range > span > svg {
+  color: #88b9d4;
+}
+.sim-range strong {
+  margin-left: auto;
+  font:
+    400 20px "Space Grotesk",
+    sans-serif;
+  letter-spacing: -0.5px;
+  color: #e1f2fb;
+}
+.sim-range strong small {
+  font:
+    7px "IBM Plex Sans",
+    sans-serif;
+  letter-spacing: 0;
+  color: #87a9bd;
+  margin-left: 4px;
+}
+.sim-range input {
+  display: block;
+  width: 100%;
+  margin: 14px 0 10px;
+  accent-color: #91d5f8;
+  background: transparent;
+  cursor: pointer;
+  height: 14px;
+  appearance: none;
+  -webkit-appearance: none;
+}
+.sim-range input::-webkit-slider-runnable-track {
+  height: 3px;
+  border-radius: 4px;
+  background: #38566c;
+}
+.sim-range input::-webkit-slider-thumb {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 12px;
+  height: 12px;
+  margin-top: -4.5px;
+  border-radius: 50%;
+  background: #a2ddff;
+  border: 1px solid #d1edfd;
+  box-shadow: 0 0 9px #5da6e344;
+}
+.sim-range input::-moz-range-track {
+  height: 3px;
+  border-radius: 4px;
+  background: #38566c;
+}
+.sim-range input::-moz-range-thumb {
+  width: 11px;
+  height: 11px;
+  background: #a2ddff;
+  border: 1px solid #d1edfd;
+  border-radius: 50%;
+}
+.sim-range > small {
+  display: flex;
+  justify-content: space-between;
+  font-size: 7px;
+  color: #6f93ab;
+}
+.sim-range > small span {
+  text-align: right;
+}
+.sim-input-note {
+  display: block;
+  font-size: 8px;
+  color: #7599b0;
+  line-height: 1.8;
+  margin-top: 16px;
+}
+.sim-check {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  font-size: 10px;
+  color: #b1d2e6;
+  padding-top: 17px;
+  cursor: pointer;
+}
+.sim-check input {
+  accent-color: #87ccec;
+  width: 13px;
+  height: 13px;
+}
+.sim-presets,
+.sim-import {
+  padding: 21px;
+}
+.sim-presets h3,
+.sim-import h3 {
+  font:
+    500 17px "Space Grotesk",
+    sans-serif;
+  color: #cde6f6;
+  margin: 9px 0 15px;
+}
+.sim-presets button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  width: 100%;
+  text-align: left;
+  border-top: 1px solid #294354;
+  padding: 13px 0;
+  color: #a9cde3;
+}
+.sim-presets button:last-child {
+  padding-bottom: 0;
+}
+.sim-presets button strong {
+  display: block;
+  font-size: 10px;
+  font-weight: 500;
+}
+.sim-presets button small {
+  display: block;
+  margin-top: 5px;
+  font-size: 8px;
+  color: #789fb8;
+  line-height: 1.6;
+}
+.sim-presets button:hover strong {
+  color: #d2edff;
+}
+.sim-import > p {
+  font-size: 10px;
+  line-height: 1.8;
+  color: #86a6be;
+  margin-bottom: 15px;
+}
+.sim-import .experiment-search {
+  width: 100%;
+  min-width: 0;
+  height: 42px;
+  padding: 0 9px;
+  margin: 13px 0;
+}
+.sim-import .experiment-search input {
+  font-size: 10px;
+}
+.sim-import .experiment-search > svg {
+  width: 14px;
+  flex-shrink: 0;
+}
+.sim-import .experiment-suggestions {
+  min-width: 280px;
+  left: auto;
+  right: 0;
+}
+.sim-import .orbital-select-trigger {
+  width: 100%;
+  min-height: 35px;
+  font-size: 10px;
+  padding: 8px 11px;
+  background: #0a1c2b;
+  border: 1px solid #314f64;
+  border-radius: 9px;
+}
+.sim-apply {
+  width: 100%;
+  justify-content: center;
+  margin-top: 12px;
+  font-size: 9px;
+  min-height: 35px;
+}
+.sim-import .sim-import-error {
+  color: #d6a68e;
+  font-size: 9px;
+  margin-top: 13px;
+  margin-bottom: 0;
+}
+.sim-provenance {
+  padding: 23px;
+  margin-top: 22px;
+}
+.sim-provenance .eyebrow {
+  font-size: 8px;
+}
+.sim-provenance h2 {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  font:
+    400 26px "Space Grotesk",
+    sans-serif;
+  letter-spacing: -1px;
+  margin: 12px 0;
+}
+.sim-provenance h2 span {
+  font:
+    10px "IBM Plex Sans",
+    sans-serif;
+  letter-spacing: 0;
+  color: #8bacbf;
+}
+.sim-provenance p {
+  font-size: 10px;
+  line-height: 1.8;
+  color: #8faec2;
+}
+.sim-provenance-values {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+  margin: 20px 0;
+  padding: 17px 0;
+  border-top: 1px solid #2b485b;
+  border-bottom: 1px solid #2b485b;
+}
+.sim-provenance-values > span {
+  color: #769ab0;
+  font-size: 8px;
+}
+.sim-provenance-values strong {
+  display: block;
+  margin-top: 7px;
+  font-size: 11px;
+  font-weight: 400;
+  color: #c4deef;
+}
+.sim-provenance-values .source-pressure small {
+  font-size: 7px;
+}
+.sim-source-notes {
+  border-left: 2px solid #3b7a9e;
+  padding-left: 12px;
+}
+.sim-provenance-actions {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+  margin-top: 17px;
+}
+.sim-provenance-actions a,
+.sim-provenance-actions button {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #9cd2f1;
+  font-size: 10px;
+}
+.sim-method {
+  margin-top: 22px;
+}
+.sim-method-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 20px 22px;
+  width: 100%;
+  text-align: left;
+}
+.sim-method-toggle > span {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+}
+.sim-method-toggle svg {
+  color: #83b5d1;
+}
+.sim-method-toggle strong {
+  font:
+    500 14px "Space Grotesk",
+    sans-serif;
+  color: #c9e5f5;
+}
+.sim-method-toggle small {
+  color: #779ab2;
+  font-size: 9px;
+}
+.sim-method.open .sim-method-toggle > svg {
+  transform: rotate(180deg);
+}
+.sim-method-content {
+  border-top: 1px solid #2a4558;
+  padding: 24px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 26px;
+}
+.sim-method-content h3 {
+  font:
+    500 15px "Space Grotesk",
+    sans-serif;
+  color: #cee7f7;
+  margin-bottom: 12px;
+}
+.sim-method-content p,
+.sim-method-content li {
+  font-size: 10px;
+  line-height: 1.9;
+  color: #8eadc3;
+  margin-bottom: 11px;
+}
+.sim-method-content code {
+  display: block;
+  font:
+    10px "IBM Plex Mono",
+    monospace;
+  color: #a8dafa;
+  padding: 12px;
+  background: #061623;
+  border: 1px solid #315067;
+  border-radius: 6px;
+  margin: 14px 0;
+  overflow-x: auto;
+}
+.sim-method-content ul {
+  list-style: disc;
+  padding-left: 17px;
+}
+.sim-method-content details {
+  color: #9ccbe3;
+  font-size: 10px;
+}
+.sim-method-content summary {
+  cursor: pointer;
+}
+.sim-method-content pre {
+  overflow-x: auto;
+  padding: 14px;
+  margin: 12px 0;
+  border: 1px solid #2a465a;
+  border-radius: 6px;
+  font-size: 9px;
+  color: #96b8cd;
+  background: #050f19;
+}
+.sim-method-content small {
+  display: block;
+  font-size: 8px;
+  color: #6b8da6;
+  margin-top: 10px;
+}
+.sim-method-sources {
+  grid-column: 1/-1;
+  border-top: 1px solid #2b4558;
+  padding-top: 20px;
+}
+.sim-method-sources a {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #9dcced;
+  font-size: 10px;
+  margin: 10px 0;
+}
+.sim-method-sources p {
+  color: #789aaf;
+  margin-top: 12px;
+  margin-bottom: 0;
+}
+.sim-range input:focus-visible,
+.sim-run:focus-visible,
+.sim-icon-button:focus-visible,
+.sim-presets button:focus-visible,
+.sim-method-toggle:focus-visible {
+  outline: 2px solid #9cd9ff;
+  outline-offset: 4px;
+}
+.sim-transport button:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+@media (max-width: 1200px) {
+  .sim-workspace {
+    grid-template-columns: minmax(0, 1fr) 260px;
+    gap: 17px;
+  }
+  .sim-controls,
+  .sim-presets,
+  .sim-import {
+    padding: 18px;
+  }
+  .sim-readouts > div {
+    padding: 0 12px;
+  }
+  .sim-readouts strong {
+    font-size: 23px;
+  }
+  .sim-chamber-heading {
+    padding: 17px;
+  }
+  .sim-chamber-heading h2 {
+    font-size: 12px;
+  }
+  .sim-state {
+    font-size: 6px;
+  }
+  .sim-chamber-heading .orbital-select-trigger {
+    min-width: 125px;
+  }
+  .sim-export {
+    flex-wrap: wrap;
+  }
+}
+@media (max-width: 920px) {
+  .sim-workspace {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .sim-side {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  .sim-controls {
+    grid-row: span 2;
+  }
+  .sim-page-heading {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .sim-page-heading h1 {
+    font-size: 36px;
+  }
+  .sim-main {
+    gap: 17px;
+  }
+  .sim-chamber-fields {
+    padding: 0 18px;
+  }
+}
+@media (max-width: 600px) {
+  .sim-page-heading h1 {
+    font-size: 29px;
+    letter-spacing: -1.3px;
+  }
+  .sim-page-heading {
+    margin: 18px 0 22px;
+  }
+  .sim-boundary {
+    align-items: flex-start;
+    flex-wrap: wrap;
+    padding: 13px;
+    gap: 10px;
+  }
+  .sim-boundary p {
+    min-width: 220px;
+    font-size: 9px;
+  }
+  .sim-boundary button {
+    margin-left: 26px;
+    font-size: 9px;
+  }
+  .sim-chamber-heading {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 14px;
+    gap: 13px;
+  }
+  .sim-chamber-heading > div {
+    gap: 7px;
+  }
+  .sim-chamber-heading h2 {
+    font-size: 12px;
+    flex: 1;
+  }
+  .sim-chamber-heading .orbital-select-trigger {
+    width: 100%;
+  }
+  .sim-chamber-fields {
+    padding: 0;
+  }
+  .sim-chamber-fields.comparison {
+    grid-template-columns: 1fr;
+  }
+  .sim-chamber-fields.comparison .sim-field-stage + .sim-field-stage {
+    border-left: 0;
+    border-top: 1px solid #29485d;
+  }
+  .sim-field-stage {
+    max-width: none;
+  }
+  .sim-field-tag {
+    font-size: 6px;
+    left: 12px;
+    top: 12px;
+  }
+  .sim-field-corner {
+    font-size: 5px;
+    left: 12px;
+  }
+  .sim-scale-row {
+    padding: 11px 13px;
+    flex-wrap: wrap;
+    font-size: 7px;
+    gap: 8px;
+  }
+  .sim-color-note {
+    width: 100%;
+    margin-left: 0;
+    font-size: 7px;
+  }
+  .sim-transport {
+    padding: 14px 12px 10px;
+    gap: 7px;
+  }
+  .sim-transport > div {
+    gap: 5px;
+  }
+  .sim-run {
+    min-width: 85px;
+    font-size: 9px;
+    padding: 8px;
+  }
+  .sim-transport .secondary-button {
+    padding: 7px;
+    font-size: 8px;
+  }
+  .sim-icon-button {
+    padding: 7px;
+  }
+  .sim-transport > div > span {
+    display: none;
+  }
+  .sim-progress {
+    margin: 0 12px;
+  }
+  .sim-status-message {
+    padding: 10px 13px;
+    font-size: 8px;
+  }
+  .sim-readouts {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px 0;
+    padding: 17px 0;
+  }
+  .sim-readouts > div {
+    padding: 0 15px;
+  }
+  .sim-readouts > div:nth-child(3) {
+    padding-left: 0;
+    border-left: 0;
+  }
+  .sim-readouts strong {
+    font-size: 27px;
+  }
+  .sim-readouts > div > span {
+    font-size: 7px;
+  }
+  .sim-trace {
+    padding: 16px 12px;
+  }
+  .sim-trace-heading {
+    align-items: flex-start;
+  }
+  .sim-trace-legend {
+    flex-direction: column;
+    gap: 7px;
+    font-size: 7px;
+  }
+  .sim-trace > small {
+    font-size: 8px;
+  }
+  .sim-export {
+    padding: 15px;
+    gap: 14px;
+  }
+  .sim-export > div:first-child {
+    align-items: flex-start;
+  }
+  .sim-export strong {
+    font-size: 10px;
+  }
+  .sim-export > div:last-child {
+    width: 100%;
+  }
+  .sim-export .secondary-button {
+    flex: 1;
+    justify-content: center;
+  }
+  .sim-side {
+    grid-template-columns: 1fr;
+  }
+  .sim-controls {
+    grid-row: auto;
+    padding: 21px;
+  }
+  .sim-controls h2 {
+    font-size: 23px;
+  }
+  .sim-range {
+    margin-top: 27px;
+  }
+  .sim-range > span {
+    font-size: 11px;
+  }
+  .sim-check {
+    font-size: 11px;
+  }
+  .sim-range > small {
+    font-size: 8px;
+  }
+  .sim-input-note {
+    font-size: 9px;
+  }
+  .sim-presets,
+  .sim-import {
+    padding: 21px;
+  }
+  .sim-import .experiment-search input {
+    font-size: 12px;
+  }
+  .sim-import .experiment-suggestions {
+    min-width: 100%;
+  }
+  .sim-provenance {
+    padding: 19px;
+  }
+  .sim-provenance-values {
+    gap: 20px;
+  }
+  .sim-provenance h2 {
+    flex-wrap: wrap;
+    gap: 7px 12px;
+  }
+  .sim-method-toggle {
+    padding: 17px;
+  }
+  .sim-method-toggle > span {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .sim-method-toggle small {
+    width: 100%;
+    padding-left: 25px;
+    font-size: 8px;
+  }
+  .sim-method-content {
+    display: flex;
+    flex-direction: column;
+    padding: 18px;
+    gap: 20px;
+  }
+  .sim-method-content p,
+  .sim-method-content li {
+    font-size: 11px;
+  }
+  .sim-model-pill {
+    font-size: 8px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .sim-method-toggle > svg {
+    transition: none;
+  }
+}
+
+@media (min-width: 601px) {
+  .sim-chamber-heading > div {
+    flex: 1;
+    min-width: 0;
+  }
+  .sim-chamber-heading .orbital-select-trigger {
+    width: 165px;
+    flex: 0 0 165px;
+  }
+}
+
+.sim-import .experiment-search-menu {
+  left: auto;
+  right: 0;
+  width: max(100%, 300px);
+  min-width: 0;
+  max-width: calc(100vw - 50px);
+}
+
+@media (max-width: 600px) {
+  .sim-trace svg text {
+    font-size: 15px;
+  }
+}
