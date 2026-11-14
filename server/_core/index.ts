@@ -7,12 +7,10 @@ import { publicPlatformScript } from "./publicConfig";
 import { appRouter } from "../routers";
 import { createContext } from "./context";
 import { registerFlowtraceProxy } from "../flowtraceProxy";
-import { registerChatProxy } from "../chatProxy";
 import { serveStatic, setupVite } from "./vite";
 
 async function startServer() {
   const app = express();
-  registerChatProxy(app);
   const server = createServer(app);
   // Configure body parser with larger size limit for file uploads
   app.use(express.json({ limit: "50mb" }));
@@ -34,6 +32,9 @@ async function startServer() {
       createContext,
     })
   );
+  app.use("/api", (_request, response) => {
+    response.status(404).json({ error: "API endpoint not found." });
+  });
   // development mode uses Vite, production mode uses static files
   if (process.env.NODE_ENV === "development") {
     await setupVite(app, server);

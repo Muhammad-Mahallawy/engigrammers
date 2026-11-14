@@ -28,14 +28,12 @@ import Evidence from "./Evidence";
 import ExperimentDetail from "@/components/ExperimentDetail";
 import ConnectionSettings from "@/components/ConnectionSettings";
 
-const Chatbot = lazy(() => import("./Chatbot"));
 const Simulation = lazy(() => import("./Simulation"));
 const navigation = [
   { href: "/", title: "Explorer" },
   { href: "/compare", title: "Compare" },
   { href: "/insights", title: "Insights" },
   { href: "/evidence", title: "Evidence" },
-  { href: "/chat", title: "Chatbot" },
   { href: "/simulation", title: "Simulation" },
 ];
 
@@ -105,11 +103,9 @@ export default function Home() {
     >
       <div className="cosmic-dust" aria-hidden="true" />
       <a href="#main-content" className="skip-link">
-        {location === "/chat"
-          ? "Skip to research chat"
-          : location === "/simulation"
-            ? "Skip to simulation lab"
-            : "Skip to experiments"}
+        {location === "/simulation"
+          ? "Skip to simulation lab"
+          : "Skip to experiments"}
       </a>
       <div className="main-shell">
         <header className="orbital-header">
@@ -211,32 +207,13 @@ export default function Home() {
               <span>/</span>
               <span>{navigation.find(n => n.href === location)?.title}</span>
               <span className="mission-breadcrumb-note">
-                {location === "/chat"
-                  ? "AI INTERPRETATION · VERIFY THE EVIDENCE"
-                  : location === "/simulation"
-                    ? "EDUCATIONAL MODEL · NOT EXPERIMENTAL DATA"
-                    : "BASS / BASS-II · RECORDED OBSERVATIONS"}
+                {location === "/simulation"
+                  ? "EDUCATIONAL MODEL · NOT EXPERIMENTAL DATA"
+                  : "BASS / BASS-II · RECORDED OBSERVATIONS"}
               </span>
             </div>
           )}
-          {location === "/chat" ? (
-            <Suspense
-              fallback={
-                <div className="loading-state large-state">
-                  <Orbit className="pulse" size={30} />
-                  <h2>Opening your research workspace…</h2>
-                </div>
-              }
-            >
-              <Chatbot
-                selectedRecords={(records.data || []).filter(record =>
-                  selected.includes(record.test_id)
-                )}
-                dataAvailable={Boolean(ready) && !failed}
-                onDetail={setDetail}
-              />
-            </Suspense>
-          ) : location === "/simulation" ? (
+          {location === "/simulation" ? (
             <Suspense
               fallback={
                 <div className="loading-state large-state">

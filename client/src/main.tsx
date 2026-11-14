@@ -9,7 +9,6 @@ import { startLogin } from "./const";
 import "./index.css";
 import "./orbital-panels.css";
 import "./orbital.css";
-import "./chat.css";
 import "./simulation.css";
 
 const queryClient = new QueryClient();

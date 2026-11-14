@@ -1,133 +1,115 @@
-# FLOWTRACE — current project hierarchy
+# FLOWTRACE project structure
 
-This package contains the latest complete source project: orbital/meteorite design, dark dropdowns, selectable experiment search, Explorer, Compare, Insights, Evidence, Chatbot and Simulation. It is the full project, not an incremental patch. The archive extracts under one root folder, `FLOWTRACE/`.
+This map describes the final downloadable package. The complete archive is `FLOWTRACE_FINAL.zip`; it extracts to one top-level folder named `FLOWTRACE`. Installed dependencies, private `.env` files, `backend/.venv`, caches, and generated build output are local artifacts and are not part of the archive.
 
-## How the layers connect
-
-```text
-Web browser — React interface (localhost:3000)
-│
-├── Explorer / Compare / Insights / Evidence
-│   └── Node + Express same-origin proxy (/api/flowtrace/*)
-│       └── Python + FastAPI scientific API (localhost:8000)
-│           └── backend/app/data/bass2_tests.csv
-│
-├── Chatbot (/chat)
-│   └── Node + Express chat adapter (/api/chat)
-│       └── Your externally hosted n8n webhook/workflow
-│
-└── Simulation (/simulation)
-    ├── Browser-local deterministic educational transport model
-    ├── Calculated field renderer and time-history plot
-    └── Optional measured inputs from the scientific API
-```
-
-The simulation does not require Python or n8n for manual/preset cases. The scientific pages and real-condition import require the FastAPI service. Chatbot answers require a configured, registered/active n8n production webhook; the last integration test found the supplied POST webhook unregistered. A server setting alone does not establish that the hosted workflow is working.
-
-## Folder tree — principal files
-
-This is a summarized tree of the current source, not an exhaustive listing of every UI primitive and starter helper.
+## Top level
 
 ```text
 FLOWTRACE/
-├── START_HERE.md                    # Fresh Windows setup and existing-install notes
-├── PROJECT_STRUCTURE.md             # This hierarchy and architecture explanation
-├── README.md                        # Detailed setup, APIs and troubleshooting
-├── package.json                     # Node commands and dependency declarations
-├── pnpm-lock.yaml                   # Pinned dependency resolution
-├── pnpm-workspace.yaml              # Package-manager configuration
-├── .env.example                     # Configuration template; no private .env included
-├── app.config.ts                    # Project metadata / brand mark
-├── Dockerfile                       # Combined Node + Python production image definition
-├── tsconfig.json                    # TypeScript settings
-├── vite.config.ts                   # Frontend build/development configuration
-├── vitest.config.ts                 # Application test configuration
-│
-├── client/                          # Frontend — React + TypeScript
-│   ├── index.html                   # Browser entry document
-│   ├── public/
-│   │   ├── space-orbit.webp         # Local space/meteorite artwork
-│   │   ├── flowtrace-mark.svg       # FLOWTRACE mark
-│   │   └── manus-routes.json        # Six application page routes
-│   └── src/
-│       ├── main.tsx                 # React entry and providers
-│       ├── App.tsx                  # Application routing
-│       ├── pages/
-│       │   ├── Home.tsx             # Shared navigation/layout and data loading
-│       │   ├── Explorer.tsx         # Experiment filters, scatter plot and table
-│       │   ├── Compare.tsx          # Side-by-side record comparisons
-│       │   ├── Insights.tsx         # Descriptive outcome summaries
-│       │   ├── Evidence.tsx         # NASA references and provenance
-│       │   ├── Chatbot.tsx          # n8n research chat interface
-│       │   └── Simulation.tsx       # Virtual-lab controls and model exports
-│       ├── components/
-│       │   ├── SpaceHero.tsx        # Cinematic orbital hero
-│       │   ├── FlowChart.tsx        # Observed experiment scatter plot
-│       │   ├── ExperimentDetail.tsx # Original-record detail drawer
-│       │   ├── ExperimentSearch.tsx # Browsable/selectable experiment suggestions
-│       │   ├── OrbitalSelect.tsx    # Dark accessible option menus
-│       │   ├── PressureValue.tsx    # Explicit pressure-range provenance
-│       │   ├── ConnectionSettings.tsx
-│       │   ├── ChatMessage.tsx      # Chat response/error presentation
-│       │   ├── SimulationCanvas.tsx # Calculated model-field rendering
-│       │   ├── SimulationTrace.tsx  # Dimensionless model-history plot
-│       │   └── ui/                 # Shared UI primitives
-│       ├── lib/
-│       │   ├── flowtrace.ts         # Scientific API types/client/formatting
-│       │   ├── experimentSearch.ts # Exact-ID and free-text search logic
-│       │   ├── chat.ts              # Chat transport, sessions and optional context
-│       │   ├── simulation.ts        # Numerical educational model
-│       │   └── *.test.ts            # Frontend/model tests
-│       ├── index.css                # Base styles
-│       ├── orbital.css              # Orbital layout, menus and meteor effects
-│       ├── orbital-panels.css       # Scientific panel styling
-│       ├── chat.css                 # Chatbot styling
-│       └── simulation.css           # Virtual-lab styling
-│
-├── server/                          # Node + Express website server
-│   ├── _core/index.ts               # Entry point and route registration
-│   ├── _core/                      # Starter/runtime helpers
-│   ├── flowtraceProxy.ts            # Read-only forwarding to FastAPI
-│   ├── chatProxy.ts                 # Validated server-only n8n adapter
-│   ├── routers.ts                  # Starter RPC routes
-│   └── *.test.ts                   # Server tests
-│
-├── backend/                         # Unchanged uploaded scientific backend
-│   ├── README.md                   # Backend-specific setup
-│   ├── requirements.txt            # Python dependencies
-│   ├── .env.example                # Backend configuration template
-│   ├── app/
-│   │   ├── main.py                 # FastAPI endpoints
-│   │   └── data/bass2_tests.csv     # Supplied experimental records
-│   └── tests/test_api.py            # Backend tests
-│
-├── shared/                          # Shared client/server contracts
-│   ├── chat.ts                     # Chat request/response and context types
-│   ├── const.ts
-│   └── types.ts
-├── drizzle/                         # Starter database schema/migrations
-│                                   # Not the NASA dataset storage
-├── patches/                         # Pinned dependency patch
-├── scripts/
-│   ├── start-production.sh          # Production service coordination
-│   └── package-style-update.py      # Source/update ZIP packaging
-│
-├── N8N_CHAT_SETUP.md                 # Workflow activation and chat configuration
-├── SIMULATION_PLAN.md               # Full sourced simulation implementation plan
-├── SIMULATION_GUIDE.md              # Model operation and limitations
-├── SIMULATION_SOURCES.md            # Verified NASA context
-├── SOURCES.md                       # Scientific dataset/artwork provenance
-├── UPDATE_STYLE.md                  # Earlier-install cumulative update guidance
-├── plan.md                          # Current combined implementation/design plan
-└── docs/CHATBOT_PLAN.md              # Approved chatbot extension plan
+├── client/                 React application, styles, public artwork, and route manifest
+├── server/                 Node/Express server and scientific proxy
+├── shared/                 Types/constants shared by browser and server code
+├── backend/                Unchanged Python/FastAPI API and included CSV
+├── scripts/                Operational scripts supplied with the source
+├── drizzle/                Existing database schema/migration source
+├── public or config files  Vite, TypeScript, Tailwind, Docker, and app configuration
+├── README.md               Project overview and API/runtime notes
+├── START_HERE.md           Fresh Windows/macOS/Linux installation guide
+├── UPDATE_STYLE.md         Final visual/simulation handoff notes
+├── plan.md                 Workspace planning note; excluded from final archive
+├── PROJECT_STRUCTURE.md    This source map
+├── SIMULATION_PLAN.md      Simulation scope, equations, provenance, and limits
+├── SIMULATION_GUIDE.md     Simulation controls, imports, exports, and interpretation
+├── SIMULATION_SOURCES.md   Simulation research-context sources
+└── SOURCES.md              NASA evidence and dataset provenance notes
 ```
 
-Other starter components, contexts, hooks and helpers are included in the source archive even where this summarized tree omits their names. The `drizzle/` schema is starter scaffolding; the current experiment dataset lives in CSV, not a newly provisioned SQL database.
+## Browser application: `client/`
 
-## What the all-in-one ZIP includes and excludes
+```text
+client/
+├── src/
+│   ├── App.tsx                         Route shell
+│   ├── main.tsx                        Browser entrypoint
+│   ├── pages/
+│   │   ├── Home.tsx                    Five-tab layout and shared data state
+│   │   ├── Explorer.tsx                 `/` record explorer
+│   │   ├── Compare.tsx                  `/compare` descriptive comparison
+│   │   ├── Insights.tsx                 `/insights` material-level summaries
+│   │   ├── Evidence.tsx                 `/evidence` source and provenance view
+│   │   └── Simulation.tsx               `/simulation` educational virtual lab
+│   ├── components/                     Reusable detail, chart, search, layout, and simulation UI
+│   │   ├── ConnectionSettings.tsx       Browser-local API connection setting
+│   │   ├── DashboardLayout.tsx          Shared navigation/layout
+│   │   ├── ExperimentDetail.tsx         Record detail and evidence links
+│   │   ├── ExperimentSearch.tsx         Exact-ID and browsable record suggestions
+│   │   ├── FlowChart.tsx                Experiment plot
+│   │   ├── SimulationCanvas.tsx         Calculated-field rendering and text fallback
+│   │   ├── SimulationTrace.tsx           Labelled model-history plot
+│   │   └── SpaceHero.tsx                 Decorative orbital hero
+│   ├── lib/
+│   │   ├── flowtrace.ts                 Typed client for `/api/flowtrace`
+│   │   ├── simulation.ts                Deterministic normalized model
+│   │   ├── experimentSearch.ts          Record search/suggestion logic
+│   │   └── *.test.ts                    Frontend behavior and numerical tests
+│   ├── index.css                        Shared functional styles
+│   ├── orbital.css                      Navigation, backdrop, hero, responsive theme
+│   ├── orbital-panels.css               Scientific panel/dialog theme
+│   └── simulation.css                   Simulation-specific responsive theme
+└── public/
+    ├── manus-routes.json                Static route manifest for five tabs
+    └── space-orbit.webp                 Decorative local artwork
+```
 
-It includes the latest frontend, Node server, unchanged supplied Python backend and CSV, simulation engine, chat adapter, shared types, tests, local artwork, dependency lockfile, deployment files and setup/model plans. There is no need to combine earlier style/search/chatbot/simulation patch ZIPs.
+The five user-facing routes are `/`, `/compare`, `/insights`, `/evidence`, and `/simulation`. The browser uses `/api/flowtrace` for scientific data; this is an API prefix, not a page route.
 
-It deliberately excludes `node_modules`, Python virtual environments, build output, Git history, runtime/browser logs and private `.env` values. Those are machine-specific or private; dependencies must be installed on the target device. Keep your existing private `.env` separately if moving a configured installation. The n8n workflow is hosted externally and its workflow export was not supplied, so that hosted service itself is not bundled.
+## Node server: `server/`
 
-The simulation remains an educational reduced-order model—not NASA-validated CFD or a material/fire-safety predictor. Model outputs are kept separate from NASA observations.
+```text
+server/
+├── _core/index.ts       Express/Node entrypoint and server startup
+├── flowtraceProxy.ts    GET-only `/api/flowtrace` proxy
+├── routers.ts           Existing application/server router integration
+├── db.ts, storage.ts    Existing server infrastructure
+└── *.test.ts            Server and platform tests
+```
+
+`flowtraceProxy.ts` defaults to upstream `http://127.0.0.1:8000`, forwards allowlisted health, filter, experiment, comparison, and insights paths, preserves query strings, and returns explicit `502` JSON when upstream is unavailable. Configure the upstream origin with `FLOWTRACE_API_URL`; do not append `/api`.
+
+## Packaging: `scripts/package-project.py`
+
+Run the helper from the project root with Python 3.10+ and Git available:
+
+```bash
+python scripts/package-project.py
+```
+
+By default it writes `../output/FLOWTRACE_FINAL.zip`; use `--output /path/to/FLOWTRACE_FINAL.zip` to choose another destination. It packages tracked and non-ignored checkout files into exactly one `FLOWTRACE/` root, validates archive integrity, and excludes installed dependencies, private environment files, caches, build output, history files (`TODO.md`, `plan.md`, and `template.json`), backups, logs, and prior ZIPs. The final archive therefore contains the operational README/setup/simulation documentation and `PROJECT_STRUCTURE.md`, but not the workspace-only `plan.md`.
+
+## Python service: `backend/`
+
+```text
+backend/
+├── app/
+│   ├── main.py                    FastAPI app and CSV-backed endpoints
+│   └── data/bass2_tests.csv       Included 56-row source dataset
+├── requirements.txt               Python runtime dependencies
+└── README.md                      Backend endpoint/provenance notes
+```
+
+The FastAPI service reads `app/data/bass2_tests.csv` at startup. Direct endpoints include `/api/health`, `/api/filters`, `/api/experiments`, `/api/experiments/{test_id}`, `/api/compare`, and `/api/insights`. Its interactive documentation is `/docs`.
+
+Create a new `backend/.venv` locally and install `requirements.txt` with that environment's interpreter; the environment is intentionally not shipped. See [START_HERE.md](START_HERE.md).
+
+## Scientific documentation
+
+- [README.md](README.md) — overview, routes, architecture, checks, Docker, and troubleshooting.
+- [START_HERE.md](START_HERE.md) — clean extraction and two-terminal startup.
+- [UPDATE_STYLE.md](UPDATE_STYLE.md) — final visual/simulation handoff.
+- `plan.md` — workspace-only interface and simulation design note; it is not included in the final archive.
+- [SIMULATION_PLAN.md](SIMULATION_PLAN.md) — model equations, scope, and limits.
+- [SIMULATION_GUIDE.md](SIMULATION_GUIDE.md) — controls, imports, exports, and interpretation.
+- [SIMULATION_SOURCES.md](SIMULATION_SOURCES.md) — simulation research context.
+- [SOURCES.md](SOURCES.md) — supplied dataset and NASA evidence provenance.
+
+All simulation quantities are normalized educational outputs. The simulation is not NASA-validated CFD, measured temperature data, a calibrated material reproduction, or a fire-safety predictor.

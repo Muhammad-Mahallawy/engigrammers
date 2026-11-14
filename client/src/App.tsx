@@ -17,7 +17,6 @@ export default function App() {
             <Route path="/compare" component={Home} />
             <Route path="/insights" component={Home} />
             <Route path="/evidence" component={Home} />
-            <Route path="/chat" component={Home} />
             <Route path="/simulation" component={Home} />
             <Route component={NotFound} />
           </Switch>

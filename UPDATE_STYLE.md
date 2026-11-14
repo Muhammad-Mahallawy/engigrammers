@@ -1,43 +1,36 @@
-# Apply the FLOWTRACE simulation update
+# FLOWTRACE final visual and simulation update
 
-This cumulative update adds the **Simulation** tab at `/simulation` while retaining the orbital/meteorite design, dark dropdowns, selectable experiment search and n8n Chatbot tab. The new virtual lab calculates normalized thermal/oxygen/fuel fields, supports controls/presets and synchronized 1g comparison, imports measured airflow/oxygen with source context, and exports clearly labelled model JSON/CSV.
+The final package combines the orbital visual treatment, dark scientific panels, searchable experiment suggestions, and the **Simulation** tab at `/simulation`. The live navigation has five tabs: Explorer `/`, Compare `/compare`, Insights `/insights`, Evidence `/evidence`, and Simulation `/simulation`.
 
-**Scientific boundary:** this is an educational reduced-order model, not NASA-validated CFD, a SIBAL/material prediction or a certified fire-safety tool. Its constants and dimensionless model clock are disclosed. Read `SIMULATION_PLAN.md` and `SIMULATION_GUIDE.md` for the complete scope and limitations.
+The complete handoff is **`FLOWTRACE_FINAL.zip`**. It extracts to one top-level folder named **`FLOWTRACE`**.
 
-## Update your existing project
+## Install the final package
 
-Download `FLOWTRACE_simulation_update.zip` and extract it to a temporary folder. It is cumulative and works over the original frontend or any earlier update delivered here. Stop the Node frontend with Ctrl+C; the Python backend can remain running. Back up any files you customized before replacement.
+Use a fresh extraction into a new, empty destination. Do **not** merge this package over an older FLOWTRACE folder: this release removes obsolete files, and merging can retain them. The archive excludes installed dependencies, `backend/.venv`, private `.env` files, caches, and generated output.
 
-Copy/merge **client, server and shared** into the existing project folder containing `package.json`. Replace matching files, but do not delete those folders before merging. Copy the included Markdown guides if desired. Your project folder was:
+For a first installation, follow [START_HERE.md](START_HERE.md). It includes Windows PowerShell, macOS, and Linux commands, pinned Node.js 22.12+ and pnpm 10.18.0 requirements, a newly created `backend/.venv`, and the two-terminal startup sequence.
 
-```text
-C:\Users\win11\Desktop\FLOWTRACE_frontend\FLOWTRACE_frontend
-```
+If you have customized an older installation, copy your changes out separately before switching to the final folder. Do not replace or alter the unchanged `backend/` files while comparing your customizations.
 
-Do not replace the Python `backend`, `node_modules`, `package.json`, `pnpm-lock.yaml` or private `.env`. Those are not part of this patch. `.env.example` is a reference template, not your active configuration. An already working installation needs no dependency reinstall.
+## Visual and interaction behavior
 
-Restart in PowerShell:
+The interface uses a near-black orbital backdrop, luminous blue navigation, dark glass research panels, custom dark selectors, restrained meteor ambience, responsive layouts, and reduced-motion handling. The artwork is decorative and does not add measurements or NASA branding. Scientific outcome colors and units retain their existing meaning.
 
-```powershell
-cd "C:\Users\win11\Desktop\FLOWTRACE_frontend\FLOWTRACE_frontend"
-$env:NODE_ENV = "development"
-pnpm exec tsx watch server/_core/index.ts
-```
+The Explorer keeps local filtering, plotted records, selection metrics, exact experiment suggestions, detail inspection, and CSV export. Compare handles two to four records descriptively; Insights uses the selected material cohort and shows contributing counts; Evidence preserves supplied source links and page references with provenance caveats.
 
-Open `http://localhost:3000/simulation`, or choose **Simulation** in the navigation. Press Ctrl+F5 if cached content remains. The lab starts paused. It runs locally without Python/n8n for presets and manual conditions. Keep the scientific backend on port 8000 if you want real-record import and the existing evidence/explorer features.
+## Simulation behavior
 
-## Use the virtual lab
+The browser-only lab is deterministic and starts paused. Run/Pause, Step, Reset, playback speed, thermal/oxygen/fuel field views, prescribed-flow guides, oxygen/ventilation/effective-buoyancy controls, presets, synchronized 1g comparison, model-time history, and local JSON/CSV exports are included.
 
-Run/Pause advances the deterministic model clock. Step advances a small fixed interval while paused. Reset restarts the same conditions. Changes to oxygen, ventilation or effective buoyancy reset/pause the case and detach any previously applied experimental source. Field-view and playback changes do not alter the physical inputs. The comparison uses identical inputs except the prescribed 1g buoyancy surrogate.
+Physical-input changes reset and pause the case. View and playback changes do not change physical inputs. Real-record import copies only a selected measured airflow and recorded oxygen when both are available and within model bounds. The source material, geometry, pressure, recorded outcome, and NASA reference remain separate observation context.
 
-Choose a real experiment and initial/final airflow before applying recorded conditions. Missing or out-of-range observations are rejected, not silently replaced. Only airflow and oxygen are copied. The source outcome, material, geometry, pressure and NASA page remain a separate observation card, not a model prediction or calibration. Intermediate buoyancy is exploratory, not validated lunar/Martian behavior.
+Simulation quantities are normalized educational fields, not measured temperature, heat-release, flame color, or NASA observations. The model is not NASA-validated CFD, a calibrated SIBAL/material reproduction, a fire-safety tool, or a validated partial-gravity forecast. See [SIMULATION_PLAN.md](SIMULATION_PLAN.md), [SIMULATION_GUIDE.md](SIMULATION_GUIDE.md), and [SIMULATION_SOURCES.md](SIMULATION_SOURCES.md).
 
-Case JSON and History CSV are local downloads. They identify the model version, input units, developer-selected assumptions and normalized outputs. No simulation rows are written into NASA records or chatbot experiment context.
+## API connection after the update
 
-## The separate chatbot setting
+Keep the unchanged Python FastAPI backend running on port `8000` when using experiment data. The Node/Express server exposes the same-origin scientific proxy at `/api/flowtrace` and forwards it to the Python API, which reads `backend/app/data/bass2_tests.csv`. Verify both services at:
 
-If you already configured `FLOWTRACE_CHAT_WEBHOOK_URL` in your private `.env`, preserve it. If not, add your POST production webhook as described in `N8N_CHAT_SETUP.md`, then restart Node. Never use a `VITE_` prefix for that private server value. The current n8n test reports **POST webhook not registered**; activate/publish the matching workflow and verify its production URL before expecting live answers. This does not block the simulation.
+- `http://127.0.0.1:8000/api/health`
+- `http://localhost:3000/api/flowtrace/health`
 
-## Complete source
-
-`FLOWTRACE_with_simulation.zip` contains the complete updated source, unchanged uploaded Python backend, numerical/application tests and all guides. It excludes installed dependencies and private environment files. First-time users should follow `README.md`; existing working installations should use the smaller cumulative update ZIP.
+Do not configure the browser connection to `/docs`; that is FastAPI documentation, not the API base. See [README.md](README.md) for external-backend configuration and production options.
