@@ -35,8 +35,12 @@ async function startServer() {
   app.use("/api", (_request, response) => {
     response.status(404).json({ error: "API endpoint not found." });
   });
-  // development mode uses Vite, production mode uses static files
-  if (process.env.NODE_ENV === "development") {
+  const entrypoint = process.argv[1]?.replace(/\\/g, "/") ?? "";
+  const production =
+    process.env.NODE_ENV === "production" || entrypoint.endsWith("/dist/index.js");
+
+  // Development uses Vite; the bundled entrypoint serves static files.
+  if (!production) {
     await setupVite(app, server);
   } else {
     serveStatic(app);

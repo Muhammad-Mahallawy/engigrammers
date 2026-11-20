@@ -11,12 +11,12 @@ FLOWTRACE/
 ├── shared/                 Types/constants shared by browser and server code
 ├── backend/                Unchanged Python/FastAPI API and included CSV
 ├── scripts/                Operational scripts supplied with the source
+├── .github/workflows/      Push and pull-request quality checks
 ├── drizzle/                Existing database schema/migration source
 ├── public or config files  Vite, TypeScript, Tailwind, Docker, and app configuration
 ├── README.md               Project overview and API/runtime notes
 ├── START_HERE.md           Fresh Windows/macOS/Linux installation guide
 ├── UPDATE_STYLE.md         Final visual/simulation handoff notes
-├── plan.md                 Workspace planning note; excluded from final archive
 ├── PROJECT_STRUCTURE.md    This source map
 ├── SIMULATION_PLAN.md      Simulation scope, equations, provenance, and limits
 ├── SIMULATION_GUIDE.md     Simulation controls, imports, exports, and interpretation
@@ -101,12 +101,15 @@ The FastAPI service reads `app/data/bass2_tests.csv` at startup. Direct endpoint
 
 Create a new `backend/.venv` locally and install `requirements.txt` with that environment's interpreter; the environment is intentionally not shipped. See [START_HERE.md](START_HERE.md).
 
+## Continuous integration
+
+`.github/workflows/quality.yml` runs on every push and pull request. It uses the locked Node package set to type-check, test, and build the application, then installs `backend/requirements.txt` and runs the Python backend tests. It requires no secrets or live external services.
+
 ## Scientific documentation
 
 - [README.md](README.md) — overview, routes, architecture, checks, Docker, and troubleshooting.
 - [START_HERE.md](START_HERE.md) — clean extraction and two-terminal startup.
 - [UPDATE_STYLE.md](UPDATE_STYLE.md) — final visual/simulation handoff.
-- `plan.md` — workspace-only interface and simulation design note; it is not included in the final archive.
 - [SIMULATION_PLAN.md](SIMULATION_PLAN.md) — model equations, scope, and limits.
 - [SIMULATION_GUIDE.md](SIMULATION_GUIDE.md) — controls, imports, exports, and interpretation.
 - [SIMULATION_SOURCES.md](SIMULATION_SOURCES.md) — simulation research context.

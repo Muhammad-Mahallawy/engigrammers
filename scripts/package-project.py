@@ -21,7 +21,7 @@ EXCLUDED_DIRECTORIES = {
     ".venv", "venv", "__pycache__", ".pytest_cache", "dist", "build",
     "coverage", "output",
 }
-EXCLUDED_FILES = {"TODO.md", "plan.md", "template.json"}
+EXCLUDED_FILES = {"TODO.md", "template.json"}
 REQUIRED_FILES = {
     "START_HERE.md", "PROJECT_STRUCTURE.md", "README.md", ".env.example",
     "package.json", "pnpm-lock.yaml", "pnpm-workspace.yaml", "Dockerfile",

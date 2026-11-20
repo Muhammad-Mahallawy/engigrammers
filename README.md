@@ -107,6 +107,10 @@ pnpm start
 
 `pnpm start` serves the built frontend on port `3000`. In a non-container process, run the unchanged FastAPI backend separately on `0.0.0.0:8000`, or set `FLOWTRACE_API_URL` to a reachable external backend origin before starting Node.
 
+## Automated quality checks
+
+GitHub Actions runs on every push and pull request. It installs the locked Node dependencies, type-checks the TypeScript code, runs the existing frontend/server tests, builds the production application, and runs the Python backend tests. The workflow uses only the included dataset and does not require credentials or external services.
+
 ## Docker
 
 The provided Dockerfile installs Node dependencies and the supplied Python requirements into a dedicated image environment. With no `FLOWTRACE_API_URL`, the production startup script runs the bundled FastAPI service on port `8000` and Node on port `3000`:
@@ -134,4 +138,4 @@ docker run --rm -p 3000:3000 \
 
 ## Project layout and provenance
 
-See [PROJECT_STRUCTURE.md](PROJECT_STRUCTURE.md) for the source map. `client/src/lib/flowtrace.ts` is the typed client for the Node scientific proxy, `server/flowtraceProxy.ts` forwards read-only requests, and `backend/` is the unchanged supplied FastAPI service. [SOURCES.md](SOURCES.md) records the NASA source links and provenance limitations; [SIMULATION_SOURCES.md](SIMULATION_SOURCES.md) records the simulation context sources.
+See [PROJECT_STRUCTURE.md](PROJECT_STRUCTURE.md) for the source map. `client/src/lib/flowtrace.ts` is the typed client for the Node scientific proxy, `server/flowtraceProxy.ts` forwards read-only requests, and `backend/` is the unchanged supplied FastAPI service. [SOURCES.md](SOURCES.md) records the NASA source links and provenance limitations; [SIMULATION_SOURCES.md](SIMULATION_SOURCES.md) records the simulation context sources. The release archive can be regenerated with `python scripts/package-project.py`.

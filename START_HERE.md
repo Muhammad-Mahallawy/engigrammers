@@ -131,8 +131,7 @@ Open **Terminal 2** at the project root and keep Terminal 1 running.
 ### Windows PowerShell
 
 ```powershell
-$env:NODE_ENV = "development"
-pnpm exec tsx watch server/_core/index.ts
+pnpm dev
 ```
 
 ### macOS/Linux
@@ -191,6 +190,8 @@ cd backend
 ```
 
 Passing tests confirms code behavior under the documented assumptions; it does not validate the educational simulation scientifically.
+
+The repository also runs these same checks automatically for every GitHub push and pull request.
 
 ## First-install troubleshooting
 
